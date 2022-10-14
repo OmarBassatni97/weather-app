@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 function App() {
   const [data, setData] = useState({})
@@ -18,6 +19,12 @@ function App() {
   }
   return (
     <div className="app">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Weather App</title>
+        <link rel="canonical" href="http://mysite.com/example" />
+        <meta name="description" content="Weather App" />
+      </Helmet>
       <div className="container">
         <div className="search">
           <form onSubmit={(e) => handleSearch(e)}>
