@@ -19,8 +19,16 @@ function App() {
 
     setLocation('')
   }
+
+  const weatherClass = {
+    Clouds : 'cloudy',
+    Snow : 'snowy',
+    Rain : 'rainy',
+    Drizzle : 'drizzle',
+    Clear : 'clear'
+  }
   return (
-    <div className="app">
+    <div className={`app ${data.weather ? weatherClass[data.weather[0].main] : 'clear'}`}>
       <Helmet>
         <meta charSet="utf-8" />
         <title>Weather App</title>
@@ -41,7 +49,7 @@ function App() {
         {data.message && <h1>{data.message}</h1>}
         <div className="top">
           <div className="bold">
-            <p>{data.name},{data.sys && data.sys.country}</p>
+            {data.name && <p>{data.name},{data.sys && data.sys.country}</p>}
             {data.main && <h1>{data.main.temp.toFixed()}°C</h1>}
           </div>
           <div className="condition">
