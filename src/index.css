@@ -5,14 +5,13 @@
   box-sizing: border-box;
 }
 body {
-  margin: 0;
   font-family: 'Ubuntu', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 p {
-  font-size:1.6rem;
+  font-size:1.4rem;
 }
 h1 {
   font-size: 6rem;
@@ -65,11 +64,15 @@ h1 {
   justify-content: space-between;
 }
 .top{
-  display: flex;
-  justify-content: space-between;
+  width: 100%;
+  margin: 1rem auto;
 }
 .condition {
+  position: relative;
+  right: -90%;
   transform: rotate(270deg);
+  transform-origin: 0 0;
+  
 }
 .bottom{
   display: flex;

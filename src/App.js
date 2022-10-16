@@ -39,18 +39,24 @@ function App() {
         {data.message && <h1>{data.message}</h1>}
         <div className="top">
           <div className="bold">
-            <p>{data.name}</p>
+            <p>{data.name},{data.sys && data.sys.country}</p>
             {data.main && <h1>{data.main.temp.toFixed()}°C</h1>}
           </div>
-          {data.weather && <p>{data.weather[0].main}</p>}
+          <div className="condition">
+            {data.weather && <p>{data.weather[0].description}</p>}
+          </div>
         </div>
         {data.name !== undefined && <div className="bottom">
           <div>
-            {data.main && <p>{data.main.temp.toFixed()}°C</p>}
-            <p>Feels like</p>
+            {data.main && <p>{data.main.temp_max.toFixed()}°C</p>}
+            <p>Max Temp</p>
           </div>
           <div>
-            {data.main && <p>{data.main.humidity}</p>}
+            {data.main && <p>{data.main.temp_min.toFixed()}°C</p>}
+            <p>Min Temp</p>
+          </div>
+          <div>
+            {data.main && <p>{data.main.humidity}%</p>}
             <p>Humidity</p>
           </div>
           <div>
